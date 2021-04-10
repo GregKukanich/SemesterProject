@@ -13,6 +13,8 @@ If run without command line arguments, using
 
 ```
 python3 main.py
+or 
+./main.py
 ```
 
 the following usage message will be displayed.
@@ -25,6 +27,8 @@ If run using
 
 ```
 python3 main.py cpu-core-temps.txt
+or
+./main.py cpu-core-temps.txt
 ```
 
 output *simliar* to
