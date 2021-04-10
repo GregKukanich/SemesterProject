@@ -23,7 +23,7 @@ def main():
         calcInterpolation(list[x],list[x+1])
     line0,line1,line2,line3, = calcLeastSquare(list)  #Setting line0,line1,line2,line3 equal to the return values of calcLeastSquare() function.
 
-    output(list,line0,line1,line2,line3) #Calling the output() function which writes to each CPU cores respective file with all linear interpolation lines
+    output(input_temps,list,line0,line1,line2,line3) #Calling the output() function which writes to each CPU cores respective file with all linear interpolation lines
     # and the single least squares approximation line for each core.
 
 if __name__ == '__main__':

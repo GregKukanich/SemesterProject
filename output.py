@@ -1,13 +1,16 @@
 #! /usr/bin/env python3
-def output(list,line0,line1,line2,line3):
-     f0 = open("interpolation-core-0.txt", "w")
+def output(input_temps,list,line0,line1,line2,line3):
+     if str(input_temps).endswith('.txt'):
+          input_temps=input_temps[:-4]
+     f0 = open(input_temps +"-core-0.txt", "w")
      f0.write(line0 + "\n") #writes the least squares approximation line for all the points for this core
-     f1 = open("interpolation-core-1.txt", "w")
+     f1 = open(input_temps +"-core-1.txt", "w")
      f1.write(line1 + "\n") #writes the least squares approximation line for all the points for this core
-     f2 = open("interpolation-core-2.txt", "w")
+     f2 = open(input_temps +"-core-2.txt", "w")
      f2.write(line2 + "\n") #writes the least squares approximation line for all the points for this core
-     f3 = open("interpolation-core-3.txt", "w")
+     f3 = open(input_temps +"-core-3.txt", "w")
      f3.write(line3 + "\n") #writes the least squares approximation line for all the points for this core
+
      for ctr in range(len(list)-1):
      #This for loop writes all of the linear interpolation lines between each time step and core temp to each cores respective file
         f0.write(f'{list[ctr].time:5} <= x < {list[ctr+1].time:5}; y_{ctr:<4}   =   {list[ctr].yIntercept0:>11.4f}   +   {list[ctr].slope0:>8.4f}x; interpolation \n')
