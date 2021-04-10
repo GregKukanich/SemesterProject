@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 class cpuTemps:
     def __init__(self,time,core0,core1,core2,core3):
         # time is the value of the current time step

@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 import parse_temps
 import sys
 from CpuTemps import cpuTemps

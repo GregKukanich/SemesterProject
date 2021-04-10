@@ -12,44 +12,32 @@
 If run without command line arguments, using
 
 ```
-./precisionEstimate
+python3 main.py
 ```
 
 the following usage message will be displayed.
 
 ```
-Usage: ./estimatePrecision.py num_execs [arbitrary precision]
+You must provide input file of CPU core temps by time step
 ```
 
 If run using
 
 ```
-./precisionEstimate 1000000
+python3 main.py cpu-core-temps.txt
 ```
 
 output *simliar* to
 
 ```
-           float|  3.7247|2.220446049250313e-16
- float-type-hint|  3.6731|2.220446049250313e-16
-      Decimal-28| 31.8602|0.999999999999999999999999999
+    0 <= x < 18870; y        =       82.1097   +   -0.00061x; least squares
+    0 <= x <    30; y_0      =       85.0000   +    -0.5000x; interpolation 
+   30 <= x <    60; y_1      =       70.0000   +     0.0000x; interpolation 
+   60 <= x <    90; y_2      =       28.0000   +     0.7000x; interpolation 
+   90 <= x <   120; y_3      =      103.0000   +    -0.1333x; interpolation
+   ... 
 ```
 
-will be generated. Note that the `float` and `float-type-hint` lines may vary.
+will be generated.
 
 ---
-
-An optional precision command line argument can be supplied to change the
-arbitrary precision used by the Python `decimal` module. For example:
-
-```
-./precisionEstimate 1000000 16
-```
-
-will generate output similar to
-
-```
-           float| 0.3979|2.220446049250313e-16
- float-type-hint| 0.4053|2.220446049250313e-16
-      Decimal-16| 3.1643|0.999999999999999
-```

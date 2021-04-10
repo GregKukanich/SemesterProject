@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 def output(list,line0,line1,line2,line3):
      f0 = open("interpolation-core-0.txt", "w")
      f0.write(line0 + "\n") #writes the least squares approximation line for all the points for this core
